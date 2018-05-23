@@ -5,33 +5,29 @@ We will walk through a typical install on Debian.
 
 # Steps
 
-* [Install Dependencies](#installdeps)
-    * [Setup additional Debian sources](#setupdebsources)
-    * [Install the `openchirp-dep` package](#installopenchirppkg)
-* [System Preparations](#sysprep)
-    * [Create openchirp system user](#createuser)
-    * [Setup SSL Certificates](#setupcerts)
-* [Setup OpenChirp REST Server and Website](#setupopenchirp)
-    * [Setup/Build Website](#setupwebsite)
+* [Install Dependencies](#install-dependencies)
+    * [Setup additional Debian sources](#setup-additional-debian-sources)
+    * [Install the openchirp-dep package](#install-the-openchirp-dep-package)
+* [System Preparations](#system-preparations)
+    * [Create openchirp system user](#create-openchirp-system-user)
+    * [Setup SSL Certificates](#setup-SSL-Certificates)
+* [Setup OpenChirp REST Server and Website](#setup-openchirp-rest-server-and-website)
+    * [Setup and Build Website](#setup-and-Build-Website)
         * Checkout
         * Config
         * Build
         * Copy
-    * [Setup REST server](#setuprest)
+    * [Setup REST server](#setup-rest-server)
         * Checkout
         * Config
         * NPM Install
         * Sytemd
-* [Setup Apache2 for website and rest](#setupapache2)
+* [Setup Apache2 for Website and REST](#setup-apache2-for-website-and-rest)
     * Enable modules
     * Add site config
     * Enable site
 
-<a name="installdeps" />
-
 ## Install Dependencies
-
-<a name="setupdebsources" />
 
 ### Setup additional Debian sources
 Add `nodesource.list` file to `/etc/apt/source.list.d/` with the
@@ -48,9 +44,7 @@ Then add the Nodesource repo key to apt-key.
 wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 ```
 
-<a name="installopenchirppkg" />
-
-### Install the `openchirp-dep` package
+### Install the openchirp-dep package
 
 ```bash
 sudo dpkg -i packages/openchirp-dep/openchirp-dep_1.0_all.deb
@@ -58,11 +52,7 @@ sudo apt-get update
 sudo apt-get install -f
 ```
 
-<a name="syspre"/>
-
-## Create openchirp system user
-
-<a name="createuser"/>
+## System Preparations
 
 ### Create openchirp system user
 
@@ -70,27 +60,19 @@ sudo apt-get install -f
 sudo adduser --system --no-create-home --disabled-login openchirp
 ```
 
-<a name="setupcerts"/>
-
 ### Setup SSL Certificates
 
 ```bash
 sudo certbot certonly --rsa-key-size 4096 --webroot --webroot-path /var/www/testing.openchirp.io -d testing.openchirp.io -d www.testing.openchirp.io
 ```
 
-<a name="setupopenchirp"/>
-
 ## Setup OpenChirp REST Server and Website
 
-<a name="setupwebsite"/>
-
-### Setup/Build Website
+### Setup and Build Website
 
 ```bash
 ng build
 ```
-
-<a name="setuprest"/>
 
 ### Setup REST server
 
@@ -128,9 +110,7 @@ Alias=rest.service
 ```
 </details>
 
-<a name="setupapache2"/>
-
-## Setup Apache2 for website and rest
+## Setup Apache2 for Website and REST
 
 ```bash
 sudo a2enmod ssl
