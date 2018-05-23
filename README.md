@@ -94,6 +94,13 @@ ng build
 
 ### Setup REST server
 
+Clone `openchirp_rest` into `/srv/`
+
+```bash
+cd /srv
+sudo git clone https://github.com/OpenChirp/openchirp_rest.git
+```
+
 In the `openchirp_rest` directory, run `npm install`
 
 Setup Systemd for REST server
