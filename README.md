@@ -136,7 +136,7 @@ Create `/etc/apache2/sites-available/testing.openchirp.io.conf`
 <details>
 <summary>Click to view `testing.openchirp.io.conf`</summary>
 
-```apache2
+```apache
 <VirtualHost *:80>
 	# The ServerName directive sets the request scheme, hostname and port that
 	# the server uses to identify itself. This is used when creating
