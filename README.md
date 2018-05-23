@@ -8,6 +8,14 @@ We will walk through a typical install on Debian.
 ## Install Software Dependencies
 
 ### Setup additional Debian sources
+Add `nodesource.list` file to `/etc/apt/source.list.d/` with the
+following contents:
+
+```
+# Supports OpenChirp V1.0
+deb https://deb.nodesource.com/node_10.x stretch main
+deb-src https://deb.nodesource.com/node_10.x stretch main
+```
 
 ### Install the `openchirp-dep` packge
 
