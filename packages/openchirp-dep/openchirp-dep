@@ -7,10 +7,10 @@ Priority: optional
 Standards-Version: 3.9.2
 
 Package: openchirp-dep
-Version: 1.0
+Version: 1.4
 Maintainer: Craig Hesling <craig@hesling.com>
 # Pre-Depends: <comma-separated list of packages>
-Depends: nodejs, redis-server, apache2, certbot, mosquitto, mongodb-server, mongodb-clients
+Depends: nodejs, redis-server, apache2, certbot, mosquitto, mongodb-server, mongodb-clients, influxdb
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
 # Provides: <comma-separated list of packages>
