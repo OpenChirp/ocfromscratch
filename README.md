@@ -39,9 +39,17 @@ deb https://deb.nodesource.com/node_10.x stretch main
 deb-src https://deb.nodesource.com/node_10.x stretch main
 ```
 
-Then add the Nodesource repo key to apt-key.
+Add `influxdb.list` file to `/etc/apt/source.list.d/` with the
+following contents:
+```
+# Supports OpenChirp V1.0
+deb https://repos.influxdata.com/debian buster stable
+```
+
+Then add the Nodesource and Influxdb repo key to apt-key.
 ```bash
-wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
 ```
 
 ### Install the openchirp-dep package
