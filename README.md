@@ -12,6 +12,7 @@ We will walk through a typical install on Debian.
     * [Create openchirp system user](#create-openchirp-system-user)
     * [Setup SSL Certificates](#setup-SSL-Certificates)
 * [Setup OpenChirp REST Server and Website](#setup-openchirp-rest-server-and-website)
+	* [Setup OAUTH](#setup-oauth)
     * [Setup and Build Website](#setup-and-Build-Website)
         * Checkout
         * Config
@@ -55,7 +56,7 @@ wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
 ### Install the openchirp-dep package
 
 ```bash
-sudo dpkg -i packages/openchirp-dep/openchirp-dep_1.0_all.deb
+sudo dpkg -i packages/openchirp-dep/openchirp-dep_1.4_all.deb
 sudo apt-get update
 sudo apt-get install -f
 ```
@@ -75,6 +76,9 @@ sudo certbot certonly --rsa-key-size 4096 --webroot --webroot-path /var/www/test
 ```
 
 ## Setup OpenChirp REST Server and Website
+
+### Setup OAUTH
+Please login to the Google Developer Console and generate an OAUTH key.
 
 ### Setup and Build Website
 
