@@ -47,16 +47,24 @@ following contents:
 deb https://repos.influxdata.com/debian buster stable
 ```
 
-Then add the Nodesource and Influxdb repo key to apt-key.
+Add `loraserver.list` file to `/etc/apt/source.list.d/` with the
+following contents:
+```
+# Supports OpenChirp V1.0
+deb https://artifacts.loraserver.io/packages/1.x/deb stable main
+```
+
+Then add the Nodesource, Influxdb, and LoRaServer repo key to apt-key.
 ```bash
 wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1CE2AFD36DBCCA00
 ```
 
 ### Install the openchirp-dep package
 
 ```bash
-sudo dpkg -i packages/openchirp-dep/openchirp-dep_1.4_all.deb
+sudo dpkg -i packages/openchirp-dep/openchirp-dep_1.5_all.deb
 sudo apt-get update
 sudo apt-get install -f
 ```
