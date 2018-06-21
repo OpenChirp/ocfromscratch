@@ -7,10 +7,10 @@ Priority: optional
 Standards-Version: 3.9.2
 
 Package: openchirp-env-dep
-Version: 1.4
+Version: 1.5
 Maintainer: Craig Hesling <craig@hesling.com>
 # Pre-Depends: <comma-separated list of packages>
-Depends: equivs, vim, bash-completion, curl, apt-transport-https, git, rsync
+Depends: equivs, vim, bash-completion, curl, apt-transport-https, git, rsync, mosquitto-clients
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
 # Provides: <comma-separated list of packages>
