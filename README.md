@@ -415,7 +415,6 @@ An acl entry to give `jane` full access would be the following:
 ```
 user jane
 topic #
-
 ```
 
 See https://github.com/jpmens/mosquitto-auth-plug for more information about
