@@ -7,7 +7,7 @@ Priority: optional
 Standards-Version: 3.9.2
 
 Package: openchirp-dep
-Version: 1.8
+Version: 1.9
 Maintainer: Craig Hesling <craig@hesling.com>
 # Pre-Depends: <comma-separated list of packages>
 Depends: nodejs, redis-server, apache2, certbot, mosquitto, mosquitto-auth-plugin, mongodb-server, mongodb-clients, influxdb, postgresql, loraserver, lora-app-server
@@ -21,6 +21,9 @@ Depends: nodejs, redis-server, apache2, certbot, mosquitto, mosquitto-auth-plugi
 # Changelog: <changelog file; defaults to a generic changelog>
 # Readme: <README.Debian file; defaults to a generic one>
 # Extra-Files: <comma-separated list of additional files for the doc directory>
+Files: etc-mosquitto/openchirp.conf /etc/mosquitto/conf.d
+       etc-mosquitto/passwords.pbkdf2 /etc/mosquitto
+       etc-mosquitto/acls.conf /etc/mosquitto
 # Files: <pair of space-separated paths; First is file to include, second is destination>
 #  <more pairs, if there's more than one file to include. Notice the starting space>
 Description: Depends on packages needed to run an OpenChirp server.
